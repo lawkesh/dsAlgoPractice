@@ -1,0 +1,26 @@
+// input: A = [2, 5, 9, 2, 8]
+// B = [3, 2]
+
+// output=[0, 2]
+
+
+let demo = function(A, B){
+        let freqMap = new Map();
+        for(let i=0;i<A.length; i++) {        
+            if(freqMap.has(A[i])) {
+                freqMap.set(A[i], freqMap.get(A[i])+1)
+            } else {
+                freqMap.set(A[i], 1)
+            }
+        }
+        let output = []
+        for(let i=0;i<B.length;i++) {
+            if(freqMap.has(B[i])) {
+                output.push(freqMap.get(B[i]))
+            } else {
+                output.push(0)
+            }
+            
+        }
+        return output
+	}
